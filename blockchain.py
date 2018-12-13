@@ -46,15 +46,22 @@ def print_blockchain_elements():
 
 
 def verify_chain():
-    block_index = 0
+    # block_index = 0
     is_valid = True
-    for block in blockchain:
+    for block_index in range(len(blockchain)):
         if block_index == 0:
             block_index +=1
             continue
-        if not block[0] == blockchain[block_index - 1]:
+        if not blockchain[block_index][0] == blockchain[block_index - 1]:
             is_valid = False
         block_index += 1
+    # for block in blockchain:
+    #     if block_index == 0:
+    #         block_index +=1
+    #         continue
+    #     if not block[0] == blockchain[block_index - 1]:
+    #         is_valid = False
+    #     block_index += 1
     return is_valid
 
 waiting_for_input = True
@@ -85,4 +92,4 @@ while waiting_for_input:
         break
 else:
     print("User left!")
-print("Done!")
+print("Done! Really done!")
